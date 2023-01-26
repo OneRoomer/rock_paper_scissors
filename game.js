@@ -1,4 +1,20 @@
 
+//Game start
+for (let i = 0; i < 5; i++){
+
+    //Player choice
+    let playerProm = prompt("Choose wisely Rock, Paper or Scissor!");
+    const playerChoice = playerProm.toString().toLowerCase();
+    
+    //Computer choice
+    const computerValue = ["rock", "paper", "scissor"];
+    const randomChoice = Math.floor(Math.random() * computerValue.length);
+    const computerChoice = computerValue[randomChoice].toString();
+    
+    //Function call
+    console.log(playRound (playerChoice, computerChoice));
+
+    }
 
 //Play game
 function playRound (player, computer) {
@@ -17,18 +33,4 @@ function playRound (player, computer) {
     else {
         return("Computer wins! Try again!");
     }
-}
-
-for (let i = 0; i < 5; i++){
-
-//Player choice
-let playerProm = prompt("Choose wisely Rock, Paper or Scissor!");
-const playerChoice = playerProm.toString().toLowerCase();
-
-//Computer choice
-const computerValue = ["rock", "paper", "scissor"];
-const randomChoice = Math.floor(Math.random() * computerValue.length);
-const computerChoice = computerValue[randomChoice].toString();
-
-    console.log(playRound (playerChoice, computerChoice));
 }
