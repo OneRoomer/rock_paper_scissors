@@ -1,20 +1,28 @@
 
-//Game start
-for (let i = 0; i < 5; i++){
+//Event Listener for all buttons in container
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(playRound(button.id, compChoice()));
+    });
+});
 
-    //Player choice
+   /* //Player choice
     let playerProm = prompt("Choose wisely Rock, Paper or Scissor!");
     const playerChoice = playerProm.toString().toLowerCase();
-    
+    */
+
     //Computer choice
+    function compChoice () {
     const computerValue = ["rock", "paper", "scissor"];
     const randomChoice = Math.floor(Math.random() * computerValue.length);
     const computerChoice = computerValue[randomChoice].toString();
+    return computerChoice;
+    }
     
     //Function call
-    console.log(playRound (playerChoice, computerChoice));
+    //console.log(playRound (playerChoice, computerChoice));
 
-    }
 
 //Play game
 function playRound (player, computer) {
