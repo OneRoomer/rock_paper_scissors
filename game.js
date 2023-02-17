@@ -8,7 +8,6 @@ buttons.forEach((button) => {
 
         playRound(button.id, compChoice());
         displayScore(playerScore, computerScore);
-
     });
 });
 
@@ -64,8 +63,29 @@ function checkScore() {
     if (playerScore >= 5 || computerScore >= 5) {
         const winnerContainer = document.querySelector('#winner');
         winnerContainer.textContent = "Congratulations to the winner!"
-        playerScore = 0;
-        computerScore = 0;
+		anotherGame();
     }
 }
 
+function anotherGame() {
+	const rematch = document.querySelector('#newGame');
+	var anotherGame = document.createElement("confirm");
+	const response = confirm("Do you want to play another round?");
+	
+	if (response) {
+		playerScore = 0;
+		computerScore = 0;
+		
+		var div = document.getElementById('winner');
+			while(div.firstChild){
+				div.removeChild(div.firstChild);
+}
+		
+	}
+	
+	else {
+
+	}
+	
+	
+}
